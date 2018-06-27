@@ -19,7 +19,7 @@ services:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.affinity:host_label: host=host001
   nodered:
-    image: sinapse/treinamento
+    image: robsonsimonassi/nodered
     stdin_open: true
     volumes:
     - nodered-data:/data:rw
