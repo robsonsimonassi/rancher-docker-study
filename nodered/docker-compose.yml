@@ -1,0 +1,24 @@
+version: '2'
+volumes:
+  nodered-data:
+  mongo-data:
+    
+services:
+  nodered:
+    container_name: my-nodered
+    image: robsonsimonassi/nodered
+    environment:
+      - NAME="jão"
+    volumes:
+      - nodered-data:/data:rw
+    ports:
+      - 1880:1880
+    links:
+      - mongo
+  
+  mongo:
+    container_name: mongo
+    image: mongo:3.6-jessie
+    volumes:
+      - mongo-data:/data/db:rw
+    
